@@ -1,0 +1,245 @@
+#modal-auditoria {
+    box-sizing: border-box;
+    width: min(760px, calc(100% - 32px));
+    max-height: 85vh;
+    padding: 24px;
+    border: 0;
+    border-radius: 12px;
+    overflow-y: auto;
+    background: #fff;
+    color: #1f2937;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+}
+
+#modal-auditoria::backdrop {
+    background: rgb(0 0 0 / 50%);
+}
+
+.modal-auditoria-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-auditoria-encabezado h2 {
+    margin: 0;
+}
+
+#detalle-auditoria pre {
+    padding: 16px;
+    border-radius: 8px;
+    background: #f3f4f6;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+#detalle-auditoria .comparacion-contenedor {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+#detalle-auditoria .tabla-cambios {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#detalle-auditoria .tabla-cambios caption {
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: left;
+}
+
+#detalle-auditoria .tabla-cambios th,
+#detalle-auditoria .tabla-cambios td {
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    vertical-align: top;
+    overflow-wrap: anywhere;
+}
+
+#detalle-auditoria .tabla-cambios thead th {
+    background: #f3f4f6;
+}
+
+#detalle-auditoria .tabla-cambios tbody th {
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+#detalle-auditoria .tabla-cambios tbody td:last-child {
+    background: #f0fdf4;
+}
+
+.panel-filtros-auditoria {
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid var(--borde, #d1d5db);
+    background: #ffffff;
+}
+
+.filtros-auditoria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 16px 20px;
+    width: 100%;
+    margin: 0;
+}
+
+.filtros-auditoria > div {
+    min-width: 0;
+}
+
+.filtros-auditoria label {
+    display: block;
+    margin-bottom: 6px;
+    color: #344054;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.filtros-auditoria input,
+.filtros-auditoria select {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 8px 12px;
+    border: 1px solid #cfd4dc;
+    border-radius: 7px;
+    background: #fff;
+    color: #344054;
+    font: inherit;
+    font-size: 14px;
+}
+
+.filtros-auditoria input::placeholder {
+    color: #667085;
+}
+
+.filtros-auditoria input:focus-visible,
+.filtros-auditoria select:focus-visible {
+    outline: 2px solid var(--rojo, #c90000);
+    outline-offset: 2px;
+}
+
+.acciones-filtros-auditoria {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.acciones-filtros-auditoria .boton {
+    box-sizing: border-box;
+    min-height: 40px;
+    min-width: 100px;
+    align-items: center;
+}
+
+.resultados-auditoria {
+    margin: 14px 0 0;
+    color: #667085;
+    font-size: 13px;
+}
+
+.panel-filtros-auditoria .alerta {
+    margin: 16px 0 0;
+}
+
+@media (max-width: 1100px) {
+    .filtros-auditoria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .panel-filtros-auditoria {
+        padding: 16px;
+    }
+
+    .filtros-auditoria {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .acciones-filtros-auditoria .boton {
+        flex: 1;
+    }
+}
+/* Una tarjeta para el producto y la transacción, separada en dos columnas. */
+#detalle-auditoria .resumen-auditoria {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0 0 20px;
+    padding: 20px;
+    border: 1px solid #e4e7ec;
+    border-radius: 8px;
+    background: #f4f5f7;
+}
+
+#detalle-auditoria .resumen-auditoria-dividido {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+#detalle-auditoria .resumen-auditoria-columna {
+    min-width: 0;
+}
+
+#detalle-auditoria .resumen-auditoria-dividido > :first-child {
+    padding-right: 24px;
+}
+
+#detalle-auditoria .resumen-auditoria-dividido > :last-child {
+    padding-left: 24px;
+    border-left: 1px solid #cfd4dc;
+}
+
+#detalle-auditoria .resumen-auditoria h3 {
+    margin: 0 0 16px;
+    color: #344054;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#detalle-auditoria .resumen-auditoria dl {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+}
+
+#detalle-auditoria .resumen-auditoria dt {
+    margin-bottom: 4px;
+    color: #667085;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#detalle-auditoria .resumen-auditoria dd {
+    margin: 0;
+    color: #1f2937;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    #detalle-auditoria .resumen-auditoria-dividido {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #detalle-auditoria .resumen-auditoria-dividido > :first-child {
+        padding-right: 0;
+        padding-bottom: 18px;
+    }
+
+    #detalle-auditoria .resumen-auditoria-dividido > :last-child {
+        padding-left: 0;
+        padding-top: 18px;
+        border-left: 0;
+        border-top: 1px solid #cfd4dc;
+    }
+}

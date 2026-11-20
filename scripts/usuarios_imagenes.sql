@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS usuario_imagenes (
+    id_usuario INT UNSIGNED NOT NULL PRIMARY KEY,
+    mime VARCHAR(30) NOT NULL,
+    contenido MEDIUMBLOB NOT NULL,
+    fecha_actualizacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_usuario_imagen_usuario FOREIGN KEY (id_usuario)
+        REFERENCES usuarios (id_usuario) ON UPDATE CASCADE ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;

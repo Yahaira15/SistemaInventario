@@ -1,0 +1,52 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Prueba del desplegable de categorías</title>
+<form id="filtros-inventario">
+    <details class="desplegable-categorias">
+        <summary>Todas las categorías</summary>
+        <div class="opciones-categorias">
+            <input type="checkbox" name="categoria[]" value="1">
+            <input type="checkbox" name="categoria[]" value="2">
+        </div>
+    </details>
+    <button>Buscar</button>
+</form>
+<pre id="resultado">PENDIENTE</pre>
+<script>
+// Simula una recarga posterior al filtrado, sin consultas ni escrituras de datos.
+sessionStorage.setItem('inventario-categorias', JSON.stringify({categoria: '2', desplazamiento: 0, fecha: Date.now()}));
+let envios = 0;
+document.querySelector('form').addEventListener('submit', evento => {
+    evento.preventDefault();
+    envios++;
+});
+</script>
+<script src="../admin/inventario/formulario.js"></script>
+<script>
+(async () => {
+    const form = document.querySelector('form');
+    const menu = document.querySelector('details');
+    const checks = [...document.querySelectorAll('input')];
+    const esperar = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const verificar = (valor, mensaje) => { if (!valor) throw new Error(mensaje); };
+    await esperar(100);
+    verificar(menu.open, 'Restaurar apertura');
+    verificar(document.activeElement === checks[1], 'Restaurar foco');
+    verificar(sessionStorage.getItem('inventario-categorias') === null, 'Consumir estado restaurado');
+    checks[0].click();
+    checks[1].click();
+    verificar(menu.querySelector('summary').textContent === '2 seleccionada(s)', 'Contar selección múltiple');
+    await esperar(400);
+    verificar(envios === 1, 'Agrupar cambios en un envío');
+    const guardado = JSON.parse(sessionStorage.getItem('inventario-categorias'));
+    verificar(guardado.categoria === '2' && typeof guardado.fecha === 'number', 'Guardar estado para recarga');
+    menu.dispatchEvent(new KeyboardEvent('keydown', {key: 'Escape', bubbles: true}));
+    verificar(!menu.open && document.activeElement === menu.querySelector('summary'), 'Cerrar con Escape');
+    menu.open = true;
+    document.querySelector('#resultado').click();
+    verificar(!menu.open, 'Cerrar al pulsar fuera');
+    form.requestSubmit();
+    verificar(sessionStorage.getItem('inventario-categorias') === null, 'Limpiar estado en envío manual');
+    document.querySelector('#resultado').textContent = 'OK: restauración, foco, selección múltiple, envío automático, almacenamiento y cierre.';
+})().catch(error => { document.querySelector('#resultado').textContent = 'FALLO: ' + error.message; });
+</script>

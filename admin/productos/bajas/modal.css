@@ -1,0 +1,186 @@
+.modal-baja {
+    width: min(680px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    color: var(--texto-principal);
+    background: var(--fondo-general);
+    box-shadow: 0 24px 64px #0004;
+}
+.modal-baja::backdrop { background: rgb(16 24 40 / 50%); }
+.encabezado-modal-baja {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 24px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+.encabezado-modal-baja h2 { margin: 0; font-size: 16px; }
+#estado-modal-baja { margin: 16px 24px; }
+.modal-baja .contenido-crud { width: 100%; margin: 0; padding: 20px; box-sizing: border-box; }
+.modal-baja textarea { width: 100%; box-sizing: border-box; }
+body:has(#modal-baja[open]) { overflow: hidden; }
+
+/* Ficha de baja en Productos: resumen, datos y motivo. */
+.modal-baja {
+    width: min(560px, calc(100% - 32px));
+    background: #fff;
+    border-radius: 14px;
+}
+.modal-baja .encabezado-modal-baja {
+    padding: 24px 32px 12px;
+}
+.modal-baja .contenido-crud {
+    padding: 0;
+}
+.ficha-baja-producto {
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    overflow: hidden;
+}
+.ficha-baja-producto .resumen-baja-producto {
+    padding: 0 32px 0;
+    background: #fff;
+    border-bottom: 1px solid #f3dddd;
+}
+.etiqueta-baja-producto {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: #fbe4e4;
+    color: #a60000;
+    font-size: 12px;
+    font-weight: 600;
+}
+.ficha-baja-producto .resumen-baja-producto h2 {
+    font-size: 21px;
+    margin-bottom: 8px;
+    overflow-wrap: anywhere;
+}
+.detalle-baja-producto {
+    padding: 20px 20px 28px;
+}
+.estado-baja-producto {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #667085;
+    font-size: 13px;
+}
+.punto-baja-producto {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a60000;
+    flex-shrink: 0;
+}
+.datos-baja-producto {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+}
+.datos-baja-producto dt {
+    color: #667085;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.datos-baja-producto dd {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+.motivo-baja-producto {
+    padding: 18px;
+    border: 1px solid #e4e7ec;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+.motivo-baja-producto h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+}
+.motivo-baja-producto p {
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.6;
+    font-size: 14px;
+}
+.nota-baja-producto {
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 18px 0 0;
+}
+@media (max-width: 480px) {
+    .datos-baja-producto {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .detalle-baja-producto,
+    .ficha-baja-producto .resumen-baja-producto {
+        padding: 18px;
+    }
+}
+.modal-baja .encabezado-modal-baja {
+    border-bottom: 0;
+}
+.identidad-baja-producto {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 2px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.codigo-baja-producto {
+    color: #c00;
+    font-weight: 700;
+}
+.descripcion-baja-producto {
+    color: #667085;
+    overflow-wrap: anywhere;
+}
+.modal-baja #cerrar-modal-baja {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: #667085;
+    font-size: 22px;
+    cursor: pointer;
+}
+.modal-baja #cerrar-modal-baja:hover {
+    background: #f2f4f7;
+}
+.modal-baja #cerrar-modal-baja:focus-visible {
+    outline: 2px solid #a60000;
+    outline-offset: 2px;
+}
+.motivo-baja-producto p {
+    color: #667085;
+}
+@media (max-width: 480px) {
+    .modal-baja .encabezado-modal-baja {
+        padding: 20px 18px 12px;
+    }
+    .ficha-baja-producto .resumen-baja-producto {
+        padding: 0 18px;
+    }
+}
+.datos-baja-producto .dato-baja-completo {
+    grid-column: 1 / -1;
+}

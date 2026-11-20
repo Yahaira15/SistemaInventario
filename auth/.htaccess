@@ -1,0 +1,3 @@
+<FilesMatch "^(sesion|proteger|limites)\.php$">
+    Require all denied
+</FilesMatch>

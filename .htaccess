@@ -1,0 +1,79 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /sistemaInventario/
+
+DirectoryIndex login.php
+
+# Página principal e inicio de sesión 
+RewriteRule ^ingresar/?$ login.php [L,QSA]
+
+# Procesamiento del inicio de sesión 
+RewriteRule ^autenticar/?$ procesar_login.php [L,QSA]
+
+# Recuperación de contraseña 
+RewriteRule ^recuperar/?$ auth/recuperacion/solicitar.php [L,QSA]
+
+# Formulario para restablecer la contraseña 
+RewriteRule ^restablecer/?$ auth/recuperacion/restablecer.php [L,QSA]
+
+# Área administrativa 
+RewriteRule ^administracion/?$ admin/dashboard/index.php [L,QSA]
+
+# Página para hacer consulta por usuario
+RewriteRule ^consultas/?$ consulta/index.php [L,QSA]
+
+# Cerrar sesión
+RewriteRule ^salir/?$ auth/logout.php [L,QSA]
+
+#Módulo de categorias
+RewriteRule ^administracion/categorias/?$ admin/categorias/index.php [L,QSA]
+RewriteRule ^administracion/categorias/procesar/?$ admin/categorias/procesar.php [L,QSA]
+
+# Módulo de atributos
+RewriteRule ^administracion/atributos/?$ admin/atributos/index.php [L,QSA]
+RewriteRule ^administracion/atributos/procesar/?$ admin/atributos/procesar.php [L,QSA]
+
+# Opciones de atributos de selección
+RewriteRule ^administracion/atributos/opciones/?$ admin/atributos/opciones/index.php [L,QSA]
+RewriteRule ^administracion/atributos/opciones/procesar/?$ admin/atributos/opciones/procesar.php [L,QSA]
+
+#Ingresar al modulo de categoria_atributos
+RewriteRule ^administracion/categorias/atributos/?$ admin/categorias/categoria_atributos/index.php [L,QSA]
+RewriteRule ^administracion/categorias/atributos/procesar/?$ admin/categorias/categoria_atributos/procesar.php [L,QSA]
+
+# Módulo de productos 
+RewriteRule ^administracion/productos/?$ admin/productos/index.php [L,QSA]
+RewriteRule ^administracion/productos/procesar/?$ admin/productos/procesar.php [L,QSA]
+RewriteRule ^administracion/productos/atributos/?$ admin/productos/atributos.php [L,QSA]
+
+# Módulo de usuario
+RewriteRule ^administracion/usuarios/?$ admin/usuarios/index.php [L,QSA]
+RewriteRule ^administracion/usuarios/procesar/?$ admin/usuarios/procesar.php [L,QSA]
+
+# Submódulo de area 
+RewriteRule ^administracion/areas/?$  admin/areas/index.php [L,QSA]
+RewriteRule ^administracion/areas/procesar/?$ admin/areas/procesar.php [L,QSA]
+
+# MÓDULO PARA DAR DE BAJA A EQUIPOS 
+RewriteRule ^administracion/bajas/?$ admin/productos/bajas/baja.php [L,QSA]
+RewriteRule ^administracion/inventario/bajas/?$ admin/inventario/bajas/index.php [L,QSA]
+RewriteRule ^administracion/inventario/bajas/exportable/?$ admin/inventario/bajas/exportar.php [L,QSA]
+
+# MÓDULO DE INVENTARIO Y SUS PROCESOS
+RewriteRule ^administracion/inventario/?$ admin/inventario/index.php [L,QSA]
+RewriteRule ^administracion/inventario/procesar/?$ admin/inventario/procesar.php [L,QSA]
+RewriteRule ^administracion/inventario/exportable/?$ admin/inventario/exportar.php [L,QSA]
+
+
+# MÓDULO DE AUDIORIA, MOVIMIENTOS Y DE MÁS 
+RewriteRule ^administracion/auditoria/?$ admin/auditoria/index.php [L,QSA]
+RewriteRule ^administracion/auditoria/exportable/?$ admin/auditoria/exportar.php [L,QSA]
+
+
+# MÓDULO DE CONSULTA 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ - [R=404,L]
+RedirectMatch 404 /\.(?!well-known/)

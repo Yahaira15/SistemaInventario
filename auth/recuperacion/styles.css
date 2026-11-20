@@ -1,0 +1,22 @@
+/* Complementa el diseño compartido con el inicio de sesión. */
+.recuperacion-logo { width: 120px; height: 64px; object-fit: contain; object-position: left center; filter: brightness(0) invert(1); margin-bottom: 32px; }
+.recuperacion-brand > p { max-width: 360px; }
+.recuperacion-pasos { display: grid; gap: 12px; margin: 32px 0 0; padding: 0; list-style: none; }
+.recuperacion-pasos li { display: flex; gap: 14px; align-items: flex-start; padding: 15px; border: 1px solid rgb(255 255 255 / 25%); border-radius: 12px; color: #fff; }
+.recuperacion-pasos li[aria-current='step'] { background: rgb(255 255 255 / 14%); border-color: rgb(255 255 255 / 65%); }
+.recuperacion-pasos li > span { display: grid; place-items: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: #fff; color: var(--rojo); font-size: 12px; font-weight: 700; }
+.recuperacion-pasos strong { display: block; margin: 2px 0 6px; font-size: 13px; }
+.recuperacion-pasos p { margin: 0; font-size: 12px; line-height: 1.6; }
+.volver { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 32px; color: var(--texto-suave); font-size: 13px; text-decoration: none; line-height: 1.5; }
+.volver span { font-size: 18px; }
+.volver:hover { color: var(--rojo); }
+.mensaje { padding: 14px 16px; margin: 0 0 24px; border: 1px solid #f3b4b4; border-radius: 10px; color: #9d1c1c; background: #fff0f0; font-size: 13px; line-height: 1.7; overflow-wrap: anywhere; }
+.mensaje.exito { border-color: #a6e3bc; color: #176b36; background: #eaf9ef; }
+.boton-enlace { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; padding: 12px 24px; border: 0; border-radius: 9px; color: #fff; background: var(--degradado); font-size: 14px; font-weight: 700; text-align: center; text-decoration: none; }
+.boton-enlace:hover { background: var(--rojo-oscuro); }
+.recuperacion-ayuda { margin: 20px 0 0; color: var(--texto-suave); font-size: 12px; line-height: 1.7; }
+@media (max-width: 720px) {
+    .recuperacion-logo { width: 88px; height: 44px; margin-bottom: 16px; }
+    .recuperacion-pasos { display: none; }
+    .volver { margin-bottom: 24px; }
+}

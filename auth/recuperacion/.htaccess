@@ -1,0 +1,3 @@
+<Files "enviar_correo.php">
+    Require all denied
+</Files>

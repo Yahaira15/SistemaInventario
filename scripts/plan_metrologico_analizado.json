@@ -1,0 +1,535 @@
+{
+    "equipos": [
+        {
+            "clave": "serie:8211000276",
+            "descripcion": "PIE DE REY DIGITAL",
+            "campos": {
+                "Fabricante": "SATA",
+                "Modelo": "91512",
+                "Número de serie": "8211000276",
+                "Magnitud o rango": "0-200mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "13926",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!6"
+            },
+            "origen": "AÑO 2026!6",
+            "referencias": [
+                "AÑO 2026!6"
+            ]
+        },
+        {
+            "clave": "serie:22890586",
+            "descripcion": "ALESOMETRO",
+            "campos": {
+                "Fabricante": "MITUTOYO",
+                "Modelo": "511-703",
+                "Número de serie": "22890586",
+                "Magnitud o rango": "50mm-150mm",
+                "Mide": "diametros interiores",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!7"
+            },
+            "origen": "AÑO 2026!7",
+            "referencias": [
+                "AÑO 2026!7"
+            ]
+        },
+        {
+            "clave": "serie:2046A",
+            "descripcion": "COMPARADOR DE CARATULA ANALOGICO",
+            "campos": {
+                "Fabricante": "MITUTOYO",
+                "Modelo": "CJCT42",
+                "Número de serie": "2046A",
+                "Magnitud o rango": "0,01mm",
+                "Mide": "COMPARACION DE DIMENSIONES Y VARIACIONES",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!8"
+            },
+            "origen": "AÑO 2026!8",
+            "referencias": [
+                "AÑO 2026!8"
+            ]
+        },
+        {
+            "clave": "serie:HD16479",
+            "descripcion": "PIE DE REY DIGITAL",
+            "campos": {
+                "Fabricante": "DIGITRONIC",
+                "Modelo": "N\/A",
+                "Número de serie": "HD16479",
+                "Magnitud o rango": "0-150mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!9"
+            },
+            "origen": "AÑO 2026!9",
+            "referencias": [
+                "AÑO 2026!9"
+            ]
+        },
+        {
+            "clave": "serie:K08221000383",
+            "descripcion": "PIE DE REY DIGITAL",
+            "campos": {
+                "Fabricante": "SATA",
+                "Modelo": "91511",
+                "Número de serie": "K08221000383",
+                "Magnitud o rango": "0-150mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TALLER-sin asignar",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "13926",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!10"
+            },
+            "origen": "AÑO 2026!10",
+            "referencias": [
+                "AÑO 2026!10"
+            ]
+        },
+        {
+            "clave": "serie:K10210902048",
+            "descripcion": "PIE DE REY CON NONIO",
+            "campos": {
+                "Fabricante": "SATA",
+                "Modelo": "91501",
+                "Número de serie": "K10210902048",
+                "Magnitud o rango": "0-150mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TALLEr- juan porras",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "14187",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!11"
+            },
+            "origen": "AÑO 2026!11",
+            "referencias": [
+                "AÑO 2026!11"
+            ]
+        },
+        {
+            "clave": "serie:2202405354",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "CROSSMAN",
+                "Modelo": "97-951",
+                "Número de serie": "2202405354",
+                "Magnitud o rango": "30-250LBS-FT",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!12"
+            },
+            "origen": "AÑO 2026!12",
+            "referencias": [
+                "AÑO 2026!12"
+            ]
+        },
+        {
+            "clave": "serie:1807303666",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "CROSSMAN",
+                "Modelo": "97-942",
+                "Número de serie": "1807303666",
+                "Magnitud o rango": "80 (Ft-Lb)",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!13"
+            },
+            "origen": "AÑO 2026!13",
+            "referencias": [
+                "AÑO 2026!13"
+            ]
+        },
+        {
+            "clave": "sinserie:PIE DE REY DIGITAL|TRUPER|N\/A|0-150MM|",
+            "descripcion": "PIE DE REY DIGITAL",
+            "campos": {
+                "Fabricante": "TRUPER",
+                "Modelo": "N\/A",
+                "Número de serie": "N\/A",
+                "Magnitud o rango": "0-150mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!14"
+            },
+            "origen": "AÑO 2026!14",
+            "referencias": [
+                "AÑO 2026!14"
+            ]
+        },
+        {
+            "clave": "serie:522082433",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SATA",
+                "Modelo": "96312",
+                "Número de serie": "522082433",
+                "Magnitud o rango": "40Nm A 200 N.m",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER-seguridad",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "14033",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!15"
+            },
+            "origen": "AÑO 2026!15",
+            "referencias": [
+                "AÑO 2026!15"
+            ]
+        },
+        {
+            "clave": "sinserie:PIE DE REY DIGITAL|JAGUAR|77355|0-300MM|11893",
+            "descripcion": "PIE DE REY DIGITAL",
+            "campos": {
+                "Fabricante": "JAGUAR",
+                "Modelo": "77355",
+                "Número de serie": "N\/A",
+                "Magnitud o rango": "0-300mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "ALMACEN",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "11893",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!16"
+            },
+            "origen": "AÑO 2026!16",
+            "referencias": [
+                "AÑO 2026!16",
+                "AÑO 2026!17"
+            ]
+        },
+        {
+            "clave": "serie:21\/LD054",
+            "descripcion": "MICROMETRO PARA EXTERIORES ANALOGICO",
+            "campos": {
+                "Fabricante": "KEX",
+                "Modelo": "N\/A",
+                "Número de serie": "21\/LD054",
+                "Magnitud o rango": "25mm-50mm",
+                "Mide": "DIMENSIONES EXTERNAS DE OBJETOS",
+                "Ubicación": "ALMACEN",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "8412",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!18"
+            },
+            "origen": "AÑO 2026!18",
+            "referencias": [
+                "AÑO 2026!18"
+            ]
+        },
+        {
+            "clave": "serie:42471",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SNAP-ON",
+                "Modelo": "TEC12A",
+                "Número de serie": "42471",
+                "Magnitud o rango": "150 Lbs-ft",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!19"
+            },
+            "origen": "AÑO 2026!19",
+            "referencias": [
+                "AÑO 2026!19"
+            ]
+        },
+        {
+            "clave": "serie:8532",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SNAP-ON",
+                "Modelo": "TEC12LA",
+                "Número de serie": "8532",
+                "Magnitud o rango": "150 Lbs-ft",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER-sin asignar",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "14472",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!20"
+            },
+            "origen": "AÑO 2026!20",
+            "referencias": [
+                "AÑO 2026!20"
+            ]
+        },
+        {
+            "clave": "serie:313601437",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SNAP-ON",
+                "Modelo": "QD4R600",
+                "Número de serie": "313601437",
+                "Magnitud o rango": "100Lbs.ft-600 Lbs-ft",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "ALMACEN",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "sin cert. Calibracion. Pendiente de envio",
+                "Origen del registro": "AÑO 2026!21"
+            },
+            "origen": "AÑO 2026!21",
+            "referencias": [
+                "AÑO 2026!21"
+            ]
+        },
+        {
+            "clave": "serie:DXK00581",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "PROTO",
+                "Modelo": "6014C",
+                "Número de serie": "DXK00581",
+                "Magnitud o rango": "50-250 Lbs-ft",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!22"
+            },
+            "origen": "AÑO 2026!22",
+            "referencias": [
+                "AÑO 2026!22"
+            ]
+        },
+        {
+            "clave": "serie:698401260",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SNAP-ON",
+                "Modelo": "QD3R250A",
+                "Número de serie": "698401260",
+                "Magnitud o rango": "50-250LBS-FT",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER-WILLER RIOS",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "11058",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!23"
+            },
+            "origen": "AÑO 2026!23",
+            "referencias": [
+                "AÑO 2026!23"
+            ]
+        },
+        {
+            "clave": "serie:1214501637",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "SNAP-ON",
+                "Modelo": "QC3R250",
+                "Número de serie": "1214501637",
+                "Magnitud o rango": "50-250 Lbs-ft",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER-ALVARO BURGOS",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "11058",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!24"
+            },
+            "origen": "AÑO 2026!24",
+            "referencias": [
+                "AÑO 2026!24"
+            ]
+        },
+        {
+            "clave": "serie:S7993",
+            "descripcion": "COMPARADOR DE CARATULA ANALOGICO",
+            "campos": {
+                "Fabricante": "BAKER",
+                "Modelo": "J50A",
+                "Número de serie": "S7993",
+                "Magnitud o rango": "0-1 in",
+                "Mide": "COMPARACION DE DIMENSIONES Y VARIACIONES",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "14353",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!25"
+            },
+            "origen": "AÑO 2026!25",
+            "referencias": [
+                "AÑO 2026!25"
+            ]
+        },
+        {
+            "clave": "serie:21\/LD053",
+            "descripcion": "MICROMETRO PARA EXTERIORES ANALOGICO",
+            "campos": {
+                "Fabricante": "JAGUAR",
+                "Modelo": "N\/A",
+                "Número de serie": "21\/LD053",
+                "Magnitud o rango": "0-25mm",
+                "Mide": "DIMENSIONES EXTERNAS DE OBJETOS",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "8412",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!26"
+            },
+            "origen": "AÑO 2026!26",
+            "referencias": [
+                "AÑO 2026!26",
+                "AÑO 2026!32"
+            ]
+        },
+        {
+            "clave": "serie:150516621",
+            "descripcion": "MICROMETRO PARA INTERIORES ANALOGICO",
+            "campos": {
+                "Fabricante": "N\/A",
+                "Modelo": "N\/A",
+                "Número de serie": "150516621",
+                "Magnitud o rango": "50mm-300mm",
+                "Mide": "DIMENSIONES INTERNAS DE OBJETOS",
+                "Ubicación": "TORNO",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "7634",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!27"
+            },
+            "origen": "AÑO 2026!27",
+            "referencias": [
+                "AÑO 2026!27"
+            ]
+        },
+        {
+            "clave": "serie:71120683298",
+            "descripcion": "PIE DE REY CON NONIO",
+            "campos": {
+                "Fabricante": "N\/A",
+                "Modelo": "C1347",
+                "Número de serie": "71120683298",
+                "Magnitud o rango": "0-300 mm",
+                "Mide": "LONGITUDES, PROFUNDIDADES Y DIAMETROS",
+                "Ubicación": "TALLER",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "",
+                "Observaciones metrológicas": "INHABILITADO HASTA ENVIO PARA CALIBRACION",
+                "Origen del registro": "AÑO 2026!28"
+            },
+            "origen": "AÑO 2026!28",
+            "referencias": [
+                "AÑO 2026!28"
+            ]
+        },
+        {
+            "clave": "sinserie:TORQUIMETRO|NORBAR|N\/A|300-1000 LBS-IN|10277",
+            "descripcion": "TORQUIMETRO",
+            "campos": {
+                "Fabricante": "NORBAR",
+                "Modelo": "N\/A",
+                "Número de serie": "N\/A",
+                "Magnitud o rango": "300-1000 Lbs-in",
+                "Mide": "PAR TORSIONAL (TORQUE)",
+                "Ubicación": "TALLER- llantas",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "10277",
+                "Observaciones metrológicas": "P",
+                "Origen del registro": "AÑO 2026!29"
+            },
+            "origen": "AÑO 2026!29",
+            "referencias": [
+                "AÑO 2026!29"
+            ]
+        },
+        {
+            "clave": "serie:5614",
+            "descripcion": "MICROMETRO PARA EXTERIORES ANALOGICO",
+            "campos": {
+                "Fabricante": "KEX",
+                "Modelo": "N\/A",
+                "Número de serie": "5614",
+                "Magnitud o rango": "75-100*0,01mm",
+                "Mide": "DIMENSIONES EXTERNAS DE OBJETOS",
+                "Ubicación": "ALMACEN",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "13645",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!30"
+            },
+            "origen": "AÑO 2026!30",
+            "referencias": [
+                "AÑO 2026!30"
+            ]
+        },
+        {
+            "clave": "sinserie:MICROMETRO PARA EXTERIORES ANALOGICO|KEX|N\/A|100-0,01MM|13043",
+            "descripcion": "MICROMETRO PARA EXTERIORES ANALOGICO",
+            "campos": {
+                "Fabricante": "KEX",
+                "Modelo": "N\/A",
+                "Número de serie": "N\/A",
+                "Magnitud o rango": "100-0,01mm",
+                "Mide": "DIMENSIONES EXTERNAS DE OBJETOS",
+                "Ubicación": "ALMACEN",
+                "Tipo de trabajo": "PESADO",
+                "Frecuencia de calibración": "12 MESES",
+                "Código interno de origen": "13043",
+                "Observaciones metrológicas": "",
+                "Origen del registro": "AÑO 2026!31"
+            },
+            "origen": "AÑO 2026!31",
+            "referencias": [
+                "AÑO 2026!31"
+            ]
+        }
+    ],
+    "avisos": [
+        "Duplicado AÑO 2026!17 de AÑO 2026!16",
+        "Duplicado AÑO 2026!32 de AÑO 2026!26"
+    ]
+}

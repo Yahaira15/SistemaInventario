@@ -1,0 +1,785 @@
+.filtros-inventario {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    align-items: end;
+}
+
+.filtros-inventario > * {
+    min-width: 0;
+}
+
+.filtros-inventario.filtros-bajas {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.filtros-inventario .campo-formulario input,
+.filtros-inventario .campo-formulario select,
+.filtros-inventario .desplegable-categorias summary {
+    box-sizing: border-box;
+    height: 40px;
+    min-width: 0;
+}
+
+.filtros-inventario .desplegable-categorias summary {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.filtros-inventario .acciones-formulario {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+}
+
+.filtros-inventario .acciones-formulario .boton {
+    width: auto;
+    min-height: 40px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+@media (max-width: 1023px) {
+    .filtros-inventario,
+    .filtros-inventario.filtros-bajas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 540px) {
+    .filtros-inventario,
+    .filtros-inventario.filtros-bajas {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* Tipografía suave y compacta, consistente con los otros buscadores. */
+.filtros-inventario .campo-formulario input,
+.filtros-inventario .campo-formulario select,
+.filtros-inventario .desplegable-categorias summary,
+.filtros-inventario .opcion-categoria {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--texto-suave);
+}
+
+.filtros-inventario .campo-formulario input::placeholder {
+    color: var(--texto-suave);
+    opacity: 1;
+}
+
+.responsable-inventario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.buscador-usuarios {
+    width: 100%;
+}
+
+.buscar-usuario {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+}
+
+.resultados-usuarios {
+    margin-top: 4px;
+    max-height: 220px;
+    overflow-y: auto;
+    border: 1px solid var(--borde);
+    border-radius: 6px;
+    background: #fff;
+}
+
+.resultado-usuario {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background: #fff;
+    color: var(--texto);
+    text-align: left;
+    cursor: pointer;
+}
+
+.resultado-usuario:hover,
+.resultado-usuario:focus-visible {
+    background: #f2f4f7;
+}
+
+.estado-busqueda {
+    color: var(--texto-suave);
+    white-space: normal;
+}
+
+.asignar-inventario .boton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.filtro-categorias {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.filtro-categorias legend {
+    padding: 0;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.desplegable-categorias {
+    position: relative;
+}
+
+.desplegable-categorias summary {
+    padding: 10px 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.desplegable-categorias summary:focus-visible {
+    outline: 2px solid var(--rojo);
+    outline-offset: 2px;
+}
+
+.desplegable-categorias[open] > .opciones-categorias {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 12px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 12px #0002;
+}
+
+.opciones-categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.filtro-categorias .opcion-categoria {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.filtro-categorias input[type='checkbox'] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    accent-color: var(--rojo);
+}
+
+.filtro-categorias small {
+    display: block;
+    margin-top: 8px;
+    color: var(--texto-suave);
+}
+
+.tarjeta-inventario {
+    overflow: visible;
+}
+
+.tarjeta-inventario .tabla-contenedor {
+    overflow-x: auto;
+}
+
+.desplegable-categorias[open] > .opciones-categorias {
+    box-sizing: border-box;
+    max-height: 220px;
+    overflow-y: auto;
+}
+.modal-inventario {
+    box-sizing: border-box;
+    inset: 0;
+    width: min(600px, calc(100% - 32px));
+    height: auto;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    padding: 0;
+    border: 0;
+    border-radius: 12px;
+    overflow-y: auto;
+    background: white;
+    color: var(--texto);
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    box-shadow: 0 24px 80px rgb(16 24 40 / 24%);
+}
+
+.modal-inventario[open] {
+    display: block;
+}
+.modal-inventario::backdrop {
+    background: rgb(16 24 40 / 50%);
+}
+
+.modal-inventario .modal-contenido {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-wrap: anywhere;
+}
+
+.modal-inventario form[data-devolucion] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 12px 0;
+    border-top: 1px solid var(--borde);
+}
+
+.modal-inventario .encabezado-modal-inventario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px 8px;
+    color: var(--texto);
+    background: var(--blanco);
+}
+
+.modal-inventario h2,
+.modal-inventario h3,
+.modal-inventario p {
+    margin: 0;
+}
+
+.modal-inventario h2 {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+.modal-inventario h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.modal-inventario .cerrar {
+    display: grid;
+    place-items: center;
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--texto-suave);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.modal-inventario .cerrar:hover {
+    background: var(--fondo);
+}
+
+.modal-inventario .equipo-modal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding: 0 24px;
+}
+
+.modal-inventario .codigo-modal {
+    font-weight: 700;
+    color: var(--rojo-oscuro);
+}
+
+.modal-inventario .equipo-modal p {
+    flex: 1 1 200px;
+    color: var(--texto-suave);
+}
+
+.modal-inventario .formulario-modal {
+    padding: 24px;
+}
+
+.modal-inventario .asignar-inventario {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 10px;
+    align-items: start;
+}
+
+.modal-inventario .asignar-inventario label {
+    grid-column: 1 / -1;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.modal-inventario .buscador-usuarios {
+    grid-column: 1;
+    grid-row: 2;
+    min-width: 0;
+}
+
+.modal-inventario {
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.modal-inventario input,
+.modal-inventario button {
+    font-family: inherit;
+}
+
+.modal-inventario .estado-busqueda {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-size: 12px;
+}
+
+.modal-inventario .boton.asignacion {
+    justify-self: end;
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    padding: 10px 10px;
+    font-size: 13px;
+    background: var(--rojo);
+    color: var(--blanco);
+}
+.modal-inventario .boton.asignacion:hover:not(:disabled) {
+    background: var(--rojo-oscuro);
+}
+
+.modal-inventario .boton:disabled {
+    cursor: not-allowed;
+}
+
+.modal-inventario .responsables-modal {
+    margin: 0 24px;
+    padding: 18px 0 20px;
+    border-top: 1px solid var(--borde);
+}
+
+.modal-inventario .titulo-responsables-modal {
+    margin-bottom: 8px;
+}
+
+.modal-inventario .responsables-modal form:first-of-type {
+    border-top: 0;
+}
+
+.modal-inventario .responsable-modal {
+    flex: 1 1 180px;
+    min-width: 0;
+    font-weight: 600;
+}
+
+.modal-inventario .boton-tabla {
+    min-height: 36px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.modal-inventario .vacio-modal {
+    padding: 8px 0;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.modal-inventario :is(button, input):focus-visible {
+    outline: 2px solid var(--rojo);
+    outline-offset: 3px;
+}
+
+
+/* RESPONSIVE DE LA PAGINA AL ESTAR EN PANTALLAS MAS PEQUEÑAS */
+@media (max-width: 480px) {
+    .modal-inventario .encabezado-modal-inventario,
+    .modal-inventario .equipo-modal,
+    .modal-inventario .formulario-modal {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+    .modal-inventario .responsables-modal {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+    .modal-inventario h2 {
+        font-size: 18px;
+    }
+    .modal-inventario .asignar-inventario {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .modal-inventario .boton.asignacion {
+        grid-column: 1;
+        grid-row: 4;
+        justify-self: stretch;
+    }
+    .modal-inventario form[data-devolucion] {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .modal-inventario .responsable-modal {
+        flex-basis: auto;
+    }
+}
+
+.desplegable-historial {
+    margin-top: 1rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+}
+
+.desplegable-historial > summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.historial-inventario {
+    margin-top: 1rem;
+    min-width: 0;
+}
+
+.historial-inventario .nota-historial {
+    font-size: .85rem;
+    color: #64748b;
+}
+
+.historial-inventario table {
+    min-width: 560px;
+}
+
+.historial-inventario .paginacion {
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin: 0;
+}
+
+.acciones-historial,
+.numeros-historial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.acciones-historial {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.historial-inventario .paginacion[hidden] {
+    display: none;
+}
+
+.historial-inventario .pagina-historial {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 50%;
+    background: #fff;
+    color: #334155;
+    cursor: pointer;
+}
+
+.historial-inventario .pagina-historial[aria-current="page"] {
+    background: #c00;
+    border-color: #c00;
+    color: #fff;
+}
+
+.historial-inventario .pagina-historial:disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+
+
+.encabezado-listado-inventario {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.encabezado-listado-inventario > .boton {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.boton.exportar {
+    background-color: #2ca521;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 10px;
+}
+.boton-exportar-excel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-exportar-excel .icono-excel {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.ver-atributos-inventario {
+    display: block;
+    margin: 0;
+    padding: 2px 0;
+    border: 0;
+    background: transparent;
+    color: var(--rojo-oscuro, #a00000);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.ver-atributos-inventario:hover {
+    text-decoration: underline;
+}
+
+.ver-atributos-inventario:focus-visible {
+    outline: 2px solid var(--rojo-oscuro, #a00000);
+    outline-offset: 3px;
+    border-radius: 3px;
+}
+
+.contenido-atributos-inventario {
+    padding: 20px 24px 24px;
+}
+
+.modal-atributos-inventario .categoria-atributos-inventario {
+    margin-bottom: 16px;
+    color: var(--texto-suave, #64748b);
+    font-size: 13px;
+}
+
+.ficha-atributos-inventario {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0;
+}
+
+.dato-atributo-inventario {
+    padding: 12px 14px;
+    border: 1px solid var(--borde, #e2e8f0);
+    border-radius: 8px;
+    background: var(--fondo, #f8fafc);
+}
+
+.dato-atributo-inventario dt {
+    color: var(--texto-suave, #64748b);
+    font-size: 12px;
+}
+
+.dato-atributo-inventario dd {
+    margin: 4px 0 0;
+    font-weight: 600;
+    white-space: pre-wrap;
+}
+
+.dato-atributo-inventario .atributo-sin-valor {
+    color: var(--texto-suave, #64748b);
+    font-weight: 400;
+}
+
+@media (max-width: 480px) {
+    .ficha-atributos-inventario {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .contenido-atributos-inventario {
+        padding: 16px;
+    }
+}
+
+
+/* Acciones de consulta y retorno de bajas. */
+.acciones-tabla.acciones-listado-bajas {
+    flex-wrap: wrap;
+    gap: 8px;
+    min-width: 170px;
+}
+
+.acciones-listado-bajas > a,
+.acciones-listado-bajas > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 34px;
+    box-sizing: border-box;
+}
+
+.acciones-formulario.acciones-detalle-baja {
+    margin-top: 20px;
+}
+.contenido-detalle-baja {
+    padding: 20px 24px;
+}
+
+.ficha-detalle-baja {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 20px 0 0;
+}
+
+.ficha-detalle-baja dt {
+    color: var(--texto-suave);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.ficha-detalle-baja dd {
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+.ficha-detalle-baja .detalle-baja-completo {
+    grid-column: 1 / -1;
+}
+
+.ficha-detalle-baja .motivo-detalle-baja {
+    white-space: pre-wrap;
+}
+
+@media (max-width: 480px) {
+    .ficha-detalle-baja {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    .contenido-detalle-baja {
+        padding: 18px;
+    }
+}
+/* Detalle de bajas con la misma presentación que Productos. */
+.modal-inventario.modal-detalle-baja {
+    width: min(560px, calc(100% - 32px));
+    border-radius: 14px;
+}
+.modal-detalle-baja .encabezado-modal-inventario {
+    padding: 24px 32px 12px;
+    border: 0;
+}
+.modal-detalle-baja .encabezado-modal-inventario h2 {
+    font-size: 16px;
+}
+.modal-detalle-baja .equipo-modal {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 32px 2px;
+    background: #fff;
+    border-bottom: 1px solid #f3dddd;
+}
+.modal-detalle-baja .equipo-modal .codigo-modal {
+    color: #c00;
+    font-size: 13px;
+    font-weight: 700;
+}
+.modal-detalle-baja .equipo-modal p {
+    margin: 0;
+    color: #667085;
+    font-size: 13px;
+}
+.modal-detalle-baja .contenido-detalle-baja {
+    padding: 20px 20px 28px;
+}
+.modal-detalle-baja .estado-detalle-baja {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #667085;
+    font-size: 13px;
+}
+.estado-detalle-baja > span {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #a60000;
+    flex-shrink: 0;
+}
+.modal-detalle-baja .ficha-detalle-baja {
+    gap: 20px;
+    margin: 24px 0 0;
+}
+.modal-detalle-baja .ficha-detalle-baja dt {
+    color: #667085;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+.modal-detalle-baja .ficha-detalle-baja dd {
+    font-size: 14px;
+    font-weight: 600;
+}
+.modal-detalle-baja .recuadro-motivo-baja {
+    padding: 18px;
+    border: 1px solid #e4e7ec;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+.modal-detalle-baja .recuadro-motivo-baja dt {
+    color: #344054;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.modal-detalle-baja .recuadro-motivo-baja dd {
+    font-weight: 400;
+    color: #667085;
+    line-height: 1.6;
+}
+.modal-detalle-baja .nota-detalle-baja {
+    color: #667085;
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 18px 0 0;
+}
+@media (max-width: 480px) {
+    .modal-detalle-baja .encabezado-modal-inventario {
+        padding: 20px 18px 12px;
+    }
+    .modal-detalle-baja .equipo-modal {
+        padding: 0 18px 2px;
+    }
+    .modal-detalle-baja .contenido-detalle-baja {
+        padding: 18px;
+    }
+}

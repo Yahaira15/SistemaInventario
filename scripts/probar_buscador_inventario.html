@@ -1,0 +1,65 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Prueba del buscador de responsables</title>
+<form data-buscador-usuarios data-producto="1">
+    <input class="buscar-usuario">
+    <input name="id_usuario" type="hidden">
+    <div class="resultados-usuarios" hidden></div>
+    <small class="estado-busqueda"></small>
+    <button type="submit" disabled>Asignar</button>
+</form>
+<pre id="resultado">PENDIENTE</pre>
+<script>
+// Datos simulados: esta prueba no envía solicitudes ni modifica la base de datos.
+let llamadas = 0;
+let modo = 'normal';
+let resolverAnterior;
+window.fetch = async (url) => {
+    llamadas++;
+    if (!url.startsWith('/sistemaInventario/admin/inventario/modal/buscar_usuarios.php?')) throw new Error('Ruta incorrecta');
+    if (modo === 'pendiente') return new Promise(resolve => { resolverAnterior = resolve; });
+    if (modo === 'error') return {ok: false};
+    return {ok: true, json: async () => modo === 'vacio' ? [] : [{id_usuario: 5, nombre: 'Ana Prueba', cedula: '12345'}]};
+};
+</script>
+<script src="../admin/inventario/formulario.js"></script>
+<script>
+(async () => {
+    const form = document.querySelector('form');
+    const input = form.querySelector('.buscar-usuario');
+    const id = form.querySelector('[name="id_usuario"]');
+    const boton = form.querySelector('button');
+    const resultados = form.querySelector('.resultados-usuarios');
+    const esperar = () => new Promise(resolve => setTimeout(resolve, 400));
+    const comprobar = (valor, mensaje) => { if (!valor) throw new Error(mensaje); };
+    const escribir = (texto) => { input.value = texto; input.dispatchEvent(new Event('input')); };
+    escribir('A');
+    await esperar();
+    comprobar(llamadas === 0, 'Mínimo de dos caracteres');
+    escribir('An');
+    await esperar();
+    comprobar(resultados.children.length === 1 && !resultados.hidden, 'Mostrar coincidencias');
+    resultados.firstChild.click();
+    comprobar(id.value === '5' && !boton.disabled && input.value === 'Ana Prueba', 'Seleccionar responsable');
+    escribir('Otro');
+    comprobar(id.value === '' && boton.disabled, 'Invalidar selección al editar');
+    modo = 'vacio';
+    await esperar();
+    comprobar(resultados.hidden && resultados.children.length === 0, 'Sin coincidencias');
+    modo = 'pendiente';
+    escribir('Anterior');
+    await esperar();
+    escribir('');
+    resolverAnterior({ok: true, json: async () => [{id_usuario: 9, nombre: 'Obsoleto', cedula: '9'}]});
+    await esperar();
+    comprobar(resultados.hidden && resultados.children.length === 0, 'Ignorar respuesta anterior');
+    modo = 'error';
+    escribir('Error');
+    await esperar();
+    comprobar(form.querySelector('.estado-busqueda').textContent.includes('No fue posible'), 'Error de servidor');
+    const envio = new Event('submit', {cancelable: true});
+    form.dispatchEvent(envio);
+    comprobar(envio.defaultPrevented, 'Impedir envío sin selección');
+    document.querySelector('#resultado').textContent = 'OK: búsqueda, selección, edición, respuesta obsoleta, vacío, error y envío sin selección.';
+})().catch(error => { document.querySelector('#resultado').textContent = 'FALLO: ' + error.message; });
+</script>
