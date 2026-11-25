@@ -465,6 +465,7 @@ body {
     align-items: center;
     gap: 8px;
     margin-top: 0.1rem;
+    padding: 5px 15px;
 }
 
 .boton {

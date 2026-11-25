@@ -1,3 +1,4 @@
+function iniciarFilasInventario() {
 'use strict';
 document.querySelectorAll('form[data-devolucion]').forEach((formulario) => {
     formulario.addEventListener('submit', (evento) => {
@@ -89,6 +90,112 @@ document.querySelectorAll('[data-buscador-usuarios]').forEach((formulario) => {
     });
 });
 
+document.querySelectorAll('.modal-inventario').forEach((modal) => {
+    // También se ejecuta cuando el diálogo se cierra con Escape.
+    modal.addEventListener('close', () => {
+        const boton = document.querySelector(`[aria-controls="${modal.id}"]`);
+        boton?.setAttribute('aria-expanded', 'false');
+        boton?.focus();
+    });
+});
+
+document.querySelectorAll('[data-historial-producto]').forEach((panel) => {
+    const filas = panel.querySelector('[data-filas-historial]');
+    const estado = panel.querySelector('[data-estado-historial]');
+    const etiquetaPagina = panel.querySelector('[data-pagina-historial]');
+    const paginacion = panel.querySelector('[data-paginacion-historial]');
+    const anterior = panel.querySelector('[data-anterior-historial]');
+    const siguiente = panel.querySelector('[data-siguiente-historial]');
+    const actualizar = panel.querySelector('[data-actualizar-historial]');
+    let pagina = 1;
+    let controlador;
+    let version = 0;
+
+    // Las fechas del servidor se muestran sin conversiones de zona horaria.
+    function fecha(valor) {
+        if (!valor) return '—';
+        const [dia, hora] = valor.split(' ');
+        const [anio, mes, numero] = dia.split('-');
+        return `${numero}/${mes}/${anio} ${(hora || '').slice(0, 5)}`;
+    }
+
+    async function cargar(destino = pagina) {
+        controlador?.abort();
+        controlador = new AbortController();
+        const versionActual = ++version;
+        anterior.disabled = siguiente.disabled = actualizar.disabled = true;
+        panel.setAttribute('aria-busy', 'true');
+        filas.replaceChildren();
+        etiquetaPagina.replaceChildren();
+        paginacion.hidden = true;
+        estado.textContent = 'Consultando historial…';
+        try {
+            const parametros = new URLSearchParams({ producto: panel.dataset.historialProducto, pagina: destino });
+            const respuesta = await fetch(`/sistemaInventario/admin/inventario/modal/historial.php?${parametros}`, {
+                signal: controlador.signal,
+                headers: { Accept: 'application/json' },
+            });
+            if (!respuesta.ok) throw new Error('No fue posible consultar el historial.');
+            const datos = await respuesta.json();
+            if (versionActual !== version) return;
+            if (!Array.isArray(datos.asignaciones)) throw new Error('Respuesta inválida.');
+            pagina = datos.pagina;
+            datos.asignaciones.forEach((asignacion) => {
+                const fila = document.createElement('tr');
+                [asignacion.responsable || 'Usuario no disponible', asignacion.cedula || '—',
+                    fecha(asignacion.fecha_asignacion), fecha(asignacion.fecha_devolucion),
+                    asignacion.fecha_devolucion ? 'Finalizada' : 'Vigente'].forEach((valor) => {
+                    const celda = document.createElement('td');
+                    celda.textContent = valor;
+                    fila.appendChild(celda);
+                });
+                filas.appendChild(fila);
+            });
+            estado.textContent = datos.total ? `${datos.total} asignación(es) registrada(s).` : 'Este producto aún no tiene asignaciones registradas.';
+            paginacion.hidden = datos.totalPaginas <= 1;
+            if (datos.totalPaginas > 1) {
+                // Limita los botones visibles para mantener compacto el modal.
+                const inicio = Math.max(1, Math.min(pagina - 2, datos.totalPaginas - 4));
+                const fin = Math.min(datos.totalPaginas, inicio + 4);
+                for (let numero = inicio; numero <= fin; numero++) {
+                    const botonPagina = document.createElement('button');
+                    botonPagina.type = 'button';
+                    botonPagina.className = 'pagina-historial';
+                    botonPagina.textContent = numero;
+                    botonPagina.setAttribute('aria-label', `Página ${numero}`);
+                    if (numero === pagina) {
+                        botonPagina.setAttribute('aria-current', 'page');
+                    }
+                    botonPagina.addEventListener('click', () => cargar(numero));
+                    etiquetaPagina.appendChild(botonPagina);
+                }
+            }
+            anterior.disabled = pagina <= 1;
+            siguiente.disabled = pagina >= datos.totalPaginas;
+        } catch (error) {
+            if (error.name === 'AbortError' || versionActual !== version) return;
+            estado.textContent = 'No fue posible consultar el historial. Usa Actualizar para reintentar.';
+        } finally {
+            if (versionActual === version) {
+                actualizar.disabled = false;
+                panel.removeAttribute('aria-busy');
+            }
+        }
+    }
+
+    panel.addEventListener('consultar-historial', () => cargar());
+    panel.closest('details')?.addEventListener('toggle', (evento) => {
+        if (evento.target.open) cargar();
+    });
+    anterior.addEventListener('click', () => cargar(pagina - 1));
+    siguiente.addEventListener('click', () => cargar(pagina + 1));
+    actualizar.addEventListener('click', () => cargar());
+});
+
+
+}
+iniciarFilasInventario();
+document.addEventListener('paginacion:actualizada', iniciarFilasInventario);
 const formularioFiltros = document.querySelector('#filtros-inventario');
 
 if (formularioFiltros) {
@@ -223,108 +330,6 @@ function cerrarModal(idModal) {
     const modal = document.getElementById(idModal);
     if (modal?.open) modal.close();
 }
-
-document.querySelectorAll('.modal-inventario').forEach((modal) => {
-    // También se ejecuta cuando el diálogo se cierra con Escape.
-    modal.addEventListener('close', () => {
-        const boton = document.querySelector(`[aria-controls="${modal.id}"]`);
-        boton?.setAttribute('aria-expanded', 'false');
-        boton?.focus();
-    });
-});
-
-document.querySelectorAll('[data-historial-producto]').forEach((panel) => {
-    const filas = panel.querySelector('[data-filas-historial]');
-    const estado = panel.querySelector('[data-estado-historial]');
-    const etiquetaPagina = panel.querySelector('[data-pagina-historial]');
-    const paginacion = panel.querySelector('[data-paginacion-historial]');
-    const anterior = panel.querySelector('[data-anterior-historial]');
-    const siguiente = panel.querySelector('[data-siguiente-historial]');
-    const actualizar = panel.querySelector('[data-actualizar-historial]');
-    let pagina = 1;
-    let controlador;
-    let version = 0;
-
-    // Las fechas del servidor se muestran sin conversiones de zona horaria.
-    function fecha(valor) {
-        if (!valor) return '—';
-        const [dia, hora] = valor.split(' ');
-        const [anio, mes, numero] = dia.split('-');
-        return `${numero}/${mes}/${anio} ${(hora || '').slice(0, 5)}`;
-    }
-
-    async function cargar(destino = pagina) {
-        controlador?.abort();
-        controlador = new AbortController();
-        const versionActual = ++version;
-        anterior.disabled = siguiente.disabled = actualizar.disabled = true;
-        panel.setAttribute('aria-busy', 'true');
-        filas.replaceChildren();
-        etiquetaPagina.replaceChildren();
-        paginacion.hidden = true;
-        estado.textContent = 'Consultando historial…';
-        try {
-            const parametros = new URLSearchParams({ producto: panel.dataset.historialProducto, pagina: destino });
-            const respuesta = await fetch(`/sistemaInventario/admin/inventario/modal/historial.php?${parametros}`, {
-                signal: controlador.signal,
-                headers: { Accept: 'application/json' },
-            });
-            if (!respuesta.ok) throw new Error('No fue posible consultar el historial.');
-            const datos = await respuesta.json();
-            if (versionActual !== version) return;
-            if (!Array.isArray(datos.asignaciones)) throw new Error('Respuesta inválida.');
-            pagina = datos.pagina;
-            datos.asignaciones.forEach((asignacion) => {
-                const fila = document.createElement('tr');
-                [asignacion.responsable || 'Usuario no disponible', asignacion.cedula || '—',
-                    fecha(asignacion.fecha_asignacion), fecha(asignacion.fecha_devolucion),
-                    asignacion.fecha_devolucion ? 'Finalizada' : 'Vigente'].forEach((valor) => {
-                    const celda = document.createElement('td');
-                    celda.textContent = valor;
-                    fila.appendChild(celda);
-                });
-                filas.appendChild(fila);
-            });
-            estado.textContent = datos.total ? `${datos.total} asignación(es) registrada(s).` : 'Este producto aún no tiene asignaciones registradas.';
-            paginacion.hidden = datos.totalPaginas <= 1;
-            if (datos.totalPaginas > 1) {
-                // Limita los botones visibles para mantener compacto el modal.
-                const inicio = Math.max(1, Math.min(pagina - 2, datos.totalPaginas - 4));
-                const fin = Math.min(datos.totalPaginas, inicio + 4);
-                for (let numero = inicio; numero <= fin; numero++) {
-                    const botonPagina = document.createElement('button');
-                    botonPagina.type = 'button';
-                    botonPagina.className = 'pagina-historial';
-                    botonPagina.textContent = numero;
-                    botonPagina.setAttribute('aria-label', `Página ${numero}`);
-                    if (numero === pagina) {
-                        botonPagina.setAttribute('aria-current', 'page');
-                    }
-                    botonPagina.addEventListener('click', () => cargar(numero));
-                    etiquetaPagina.appendChild(botonPagina);
-                }
-            }
-            anterior.disabled = pagina <= 1;
-            siguiente.disabled = pagina >= datos.totalPaginas;
-        } catch (error) {
-            if (error.name === 'AbortError' || versionActual !== version) return;
-            estado.textContent = 'No fue posible consultar el historial. Usa Actualizar para reintentar.';
-        } finally {
-            if (versionActual === version) {
-                actualizar.disabled = false;
-                panel.removeAttribute('aria-busy');
-            }
-        }
-    }
-
-    panel.addEventListener('consultar-historial', () => cargar());
-    panel.closest('details')?.addEventListener('toggle', (evento) => {
-        if (evento.target.open) cargar();
-    });
-    anterior.addEventListener('click', () => cargar(pagina - 1));
-    siguiente.addEventListener('click', () => cargar(pagina + 1));
-    actualizar.addEventListener('click', () => cargar());
-});
 
 const modalRecuperado = document.querySelector('[data-recuperar-formulario]');
 if (modalRecuperado) {

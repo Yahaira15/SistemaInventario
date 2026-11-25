@@ -8,6 +8,9 @@ $resultado = null;
 $mensaje = '';
 $cedula = '';
 $dispositivos = [];
+$fotoUsuario = null;
+
+header('Cache-Control: no-store');
 
 // Solo consulta la base de datos después de recibir una cédula por POST.
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              FROM usuarios AS u
              INNER JOIN areas AS a ON a.id_area = u.id_area
              WHERE u.cedula = :cedula
-               AND u.rol = "FUNCIONARIO"
              LIMIT 1'
         );
         $consulta->execute(['cedula' => $cedula]);
@@ -33,6 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!$resultado) {
             $mensaje = 'No encontramos información disponible para esta cédula.';
         } else {
+            $consultaFoto = $conexion->prepare(
+                'SELECT mime, contenido FROM usuario_imagenes WHERE id_usuario = :usuario LIMIT 1'
+            );
+            $consultaFoto->execute(['usuario' => $resultado['id_usuario']]);
+            $foto = $consultaFoto->fetch();
+            if ($foto && in_array($foto['mime'], ['image/jpeg', 'image/png', 'image/webp'], true)) {
+                $fotoUsuario = 'data:' . $foto['mime'] . ';base64,' . base64_encode($foto['contenido']);
+            }
+
             $consultaEquipos = $conexion->prepare(
                 'SELECT p.descripcion, c.nombre AS categoria, a.nombre AS area,
                         ci.codigo, pa.fecha_asignacion
@@ -100,6 +111,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <!-- Este bloque solo se renderiza cuando la consulta encontró información. -->
             <section class="resultado" aria-live="polite">
                 <header>
+                    <figure class="foto-consulta">
+                        <?php if ($fotoUsuario !== null): ?>
+                            <img src="<?= htmlspecialchars($fotoUsuario, ENT_QUOTES, 'UTF-8') ?>"
+                                 alt="Foto de <?= htmlspecialchars(trim($resultado['nombre'] . ' ' . $resultado['apellido']), ENT_QUOTES, 'UTF-8') ?>"
+                                 width="88" height="88">
+                        <?php else: ?>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg>
+                            <figcaption>Sin foto</figcaption>
+                        <?php endif; ?>
+                    </figure>
                     <div>
                         <span>Resultado de la consulta</span>
                         <h2><?= htmlspecialchars($resultado['nombre'] . ' ' . $resultado['apellido'], ENT_QUOTES, 'UTF-8') ?></h2>

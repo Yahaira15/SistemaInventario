@@ -137,7 +137,6 @@ $columnasPorCategoria = consultarColumnasProductosPorCategoria(
     $conexion,
     array_keys($totalesCategorias)
 );
-
 foreach ($categorias as $categoriaListado) {
     $idCategoriaListado = (int) $categoriaListado['id_categoria'];
     if ($categoriasSeleccionadas && !in_array($idCategoriaListado, $categoriasSeleccionadas, true)) continue;
@@ -228,7 +227,7 @@ $seccionActiva = 'productos';
                                 
                                 <?php if ($estaEditando):?>
                                     <input type="hidden" name="id_producto" value="<?= (int) $productoEditar['id_producto'] ?>">
-                                    <input type="hidden" name="version" value="<?= (int) $productoEditar['version'] ?>">
+                                    <input type="hidden" name="version" value="<?= (int) $datosFormulario['version'] ?>">
                                 <?php endif;?>
 
                                 <div class="container">
@@ -486,16 +485,26 @@ $seccionActiva = 'productos';
                         <?php endif; ?>
                         <?php if ($categoriaFiltro && $totalPaginas > 1):?>
                             <nav class="paginacion" aria-label="Páginas">
+                                <?php if ($pagina > 1): ?>
+                                    <a class="pagina-enlace" aria-label="Página anterior"
+                                       href="<?= htmlspecialchars(urlProducto($pagina - 1, $query), ENT_QUOTES, 'UTF-8') ?>">‹</a>
+                                <?php endif; ?>
                                 <?php foreach (paginasProducto($pagina, $totalPaginas) as $p):?>
                                     <?php if ($p === null):?>
                                         <span class="paginacion-elipsis">…</span>
                                     <?php else:?>
-                                        <a class="pagina-enlace <?= $p === $pagina?'activa':''?>" 
+                                        <a class="pagina-enlace <?= $p === $pagina?'activa':''?>"
+                                        aria-label="Página <?= $p ?>"
+                                        <?= $p === $pagina ? 'aria-current="page"' : '' ?>
                                         href="<?= htmlspecialchars(urlProducto($p, $query), ENT_QUOTES, 'UTF-8')?>">
                                         <?= $p?>
                                         </a>
                                     <?php endif;?>
                                 <?php endforeach;?>
+                                <?php if ($pagina < $totalPaginas): ?>
+                                    <a class="pagina-enlace" aria-label="Página siguiente"
+                                       href="<?= htmlspecialchars(urlProducto($pagina + 1, $query), ENT_QUOTES, 'UTF-8') ?>">›</a>
+                                <?php endif; ?>
                             </nav>
                         <?php endif;?>
                         </section>

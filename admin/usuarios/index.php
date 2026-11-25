@@ -572,7 +572,10 @@ if ($rolFiltro !== '') {
                                     <?php foreach ($usuarios as $usuario): ?>
                                         <tr>
                                             <td><?= htmlspecialchars($usuario['cedula'], ENT_QUOTES, 'UTF-8') ?></td>
-                                            <td><?= htmlspecialchars($usuario['nombre'], ENT_QUOTES, 'UTF-8') ?></td>
+                                            <td class="usuario-foto-celda" tabindex="0"
+                                                data-foto-usuario="<?= (int) $usuario['id_usuario'] ?>"
+                                                data-nombre-usuario="<?= htmlspecialchars(trim($usuario['nombre'] . ' ' . $usuario['apellido']), ENT_QUOTES, 'UTF-8') ?>"
+                                                aria-describedby="vista-foto-usuario"><?= htmlspecialchars($usuario['nombre'], ENT_QUOTES, 'UTF-8') ?></td>
                                             <td><?= htmlspecialchars($usuario['apellido'], ENT_QUOTES, 'UTF-8') ?></td>
                                             <td><?= htmlspecialchars($usuario['correo'], ENT_QUOTES, 'UTF-8') ?></td>
                                             <td><?= htmlspecialchars($usuario['area'], ENT_QUOTES, 'UTF-8') ?></td>
@@ -650,6 +653,12 @@ if ($rolFiltro !== '') {
         'estaEditando' => $estaEditando,
         'rolOriginal' => $usuarioEditar['rol'] ?? 'FUNCIONARIO',
     ], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_THROW_ON_ERROR) ?></script>
+    <div class="usuario-foto-flotante" id="vista-foto-usuario" role="tooltip" hidden>
+        <img alt="" hidden>
+        <span class="usuario-foto-mensaje" role="status"></span>
+        <strong></strong>
+    </div>
+    <script src="/sistemaInventario/admin/usuarios/vista-foto.js"></script>
     <script src="/sistemaInventario/admin/usuarios/formulario.js"></script>
     <script src="/sistemaInventario/admin/js/confirmaciones.js"></script>
 </body>

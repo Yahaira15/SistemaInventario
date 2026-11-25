@@ -36,3 +36,5 @@ $inicialesEncabezado = mb_strtoupper($inicialesEncabezado, 'UTF-8');
     </div>
 </details>
 <script src="/sistemaInventario/admin/js/usuario-encabezado.js" defer></script>
+
+<script src="/sistemaInventario/admin/js/paginacion.js" defer></script>

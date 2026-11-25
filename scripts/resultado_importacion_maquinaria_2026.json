@@ -1,0 +1,744 @@
+[
+    {
+        "numero": "1",
+        "fila": 6,
+        "id_producto": 50,
+        "codigo": "HRM026",
+        "accion": "insertado"
+    },
+    {
+        "numero": "2",
+        "fila": 7,
+        "id_producto": 51,
+        "codigo": "HRM027",
+        "accion": "insertado"
+    },
+    {
+        "numero": "3",
+        "fila": 8,
+        "id_producto": 52,
+        "codigo": "HRM028",
+        "accion": "insertado"
+    },
+    {
+        "numero": "5",
+        "fila": 10,
+        "id_producto": 53,
+        "codigo": "HRM029",
+        "accion": "insertado"
+    },
+    {
+        "numero": "6",
+        "fila": 11,
+        "id_producto": 54,
+        "codigo": "HRM030",
+        "accion": "insertado"
+    },
+    {
+        "numero": "7",
+        "fila": 12,
+        "id_producto": 55,
+        "codigo": "HRM031",
+        "accion": "insertado"
+    },
+    {
+        "numero": "8",
+        "fila": 13,
+        "id_producto": 56,
+        "codigo": "HRM032",
+        "accion": "insertado"
+    },
+    {
+        "numero": "9",
+        "fila": 14,
+        "id_producto": 57,
+        "codigo": "HRM033",
+        "accion": "insertado"
+    },
+    {
+        "numero": "10",
+        "fila": 15,
+        "id_producto": 58,
+        "codigo": "HRM034",
+        "accion": "insertado"
+    },
+    {
+        "numero": "11",
+        "fila": 16,
+        "id_producto": 59,
+        "codigo": "HRM035",
+        "accion": "insertado"
+    },
+    {
+        "numero": "12",
+        "fila": 17,
+        "id_producto": 60,
+        "codigo": "HRM036",
+        "accion": "insertado"
+    },
+    {
+        "numero": "13",
+        "fila": 18,
+        "id_producto": 61,
+        "codigo": "HRM037",
+        "accion": "insertado"
+    },
+    {
+        "numero": "15",
+        "fila": 20,
+        "id_producto": 62,
+        "codigo": "HRM038",
+        "accion": "insertado"
+    },
+    {
+        "numero": "16",
+        "fila": 21,
+        "id_producto": 63,
+        "codigo": "HRM039",
+        "accion": "insertado"
+    },
+    {
+        "numero": "17",
+        "fila": 22,
+        "id_producto": 64,
+        "codigo": "HRM040",
+        "accion": "insertado"
+    },
+    {
+        "numero": "18",
+        "fila": 23,
+        "id_producto": 65,
+        "codigo": "HRM041",
+        "accion": "insertado"
+    },
+    {
+        "numero": "19",
+        "fila": 24,
+        "id_producto": 66,
+        "codigo": "HRM042",
+        "accion": "insertado"
+    },
+    {
+        "numero": "21",
+        "fila": 26,
+        "id_producto": 67,
+        "codigo": "HRM043",
+        "accion": "insertado"
+    },
+    {
+        "numero": "22",
+        "fila": 27,
+        "id_producto": 68,
+        "codigo": "HRM044",
+        "accion": "insertado"
+    },
+    {
+        "numero": "24",
+        "fila": 29,
+        "id_producto": 69,
+        "codigo": "HRM045",
+        "accion": "insertado"
+    },
+    {
+        "numero": "25",
+        "fila": 30,
+        "id_producto": 70,
+        "codigo": "HRM046",
+        "accion": "insertado"
+    },
+    {
+        "numero": "26",
+        "fila": 31,
+        "id_producto": 71,
+        "codigo": "HRM047",
+        "accion": "insertado"
+    },
+    {
+        "numero": "27",
+        "fila": 32,
+        "id_producto": 72,
+        "codigo": "HRM048",
+        "accion": "insertado"
+    },
+    {
+        "numero": "28",
+        "fila": 33,
+        "id_producto": 73,
+        "codigo": "HRM049",
+        "accion": "insertado"
+    },
+    {
+        "numero": "30",
+        "fila": 35,
+        "id_producto": 74,
+        "codigo": "HRM050",
+        "accion": "insertado"
+    },
+    {
+        "numero": "31",
+        "fila": 36,
+        "id_producto": 75,
+        "codigo": "HRM051",
+        "accion": "insertado"
+    },
+    {
+        "numero": "32",
+        "fila": 37,
+        "id_producto": 76,
+        "codigo": "HRM052",
+        "accion": "insertado"
+    },
+    {
+        "numero": "33",
+        "fila": 38,
+        "id_producto": 77,
+        "codigo": "HRM053",
+        "accion": "insertado"
+    },
+    {
+        "numero": "34",
+        "fila": 39,
+        "id_producto": 78,
+        "codigo": "HRM054",
+        "accion": "insertado"
+    },
+    {
+        "numero": "35",
+        "fila": 40,
+        "id_producto": 79,
+        "codigo": "HRM055",
+        "accion": "insertado"
+    },
+    {
+        "numero": "36",
+        "fila": 41,
+        "id_producto": 80,
+        "codigo": "HRM056",
+        "accion": "insertado"
+    },
+    {
+        "numero": "37",
+        "fila": 42,
+        "id_producto": 81,
+        "codigo": "HRM057",
+        "accion": "insertado"
+    },
+    {
+        "numero": "38",
+        "fila": 43,
+        "id_producto": 82,
+        "codigo": "HRM058",
+        "accion": "insertado"
+    },
+    {
+        "numero": "39",
+        "fila": 44,
+        "id_producto": 83,
+        "codigo": "HRM059",
+        "accion": "insertado"
+    },
+    {
+        "numero": "40",
+        "fila": 45,
+        "id_producto": 84,
+        "codigo": "HRM060",
+        "accion": "insertado"
+    },
+    {
+        "numero": "41",
+        "fila": 46,
+        "id_producto": 85,
+        "codigo": "HRM061",
+        "accion": "insertado"
+    },
+    {
+        "numero": "42",
+        "fila": 47,
+        "id_producto": 86,
+        "codigo": "HRM062",
+        "accion": "insertado"
+    },
+    {
+        "numero": "43",
+        "fila": 48,
+        "id_producto": 87,
+        "codigo": "HRM063",
+        "accion": "insertado"
+    },
+    {
+        "numero": "44",
+        "fila": 49,
+        "id_producto": 88,
+        "codigo": "HRM064",
+        "accion": "insertado"
+    },
+    {
+        "numero": "45",
+        "fila": 50,
+        "id_producto": 89,
+        "codigo": "HRM065",
+        "accion": "insertado"
+    },
+    {
+        "numero": "46",
+        "fila": 51,
+        "id_producto": 90,
+        "codigo": "HRM066",
+        "accion": "insertado"
+    },
+    {
+        "numero": "47",
+        "fila": 52,
+        "id_producto": 91,
+        "codigo": "HRM067",
+        "accion": "insertado"
+    },
+    {
+        "numero": "48",
+        "fila": 53,
+        "id_producto": 92,
+        "codigo": "HRM068",
+        "accion": "insertado"
+    },
+    {
+        "numero": "49",
+        "fila": 54,
+        "id_producto": 93,
+        "codigo": "HRM069",
+        "accion": "insertado"
+    },
+    {
+        "numero": "50",
+        "fila": 55,
+        "id_producto": 94,
+        "codigo": "HRM070",
+        "accion": "insertado"
+    },
+    {
+        "numero": "51",
+        "fila": 56,
+        "id_producto": 95,
+        "codigo": "HRM071",
+        "accion": "insertado"
+    },
+    {
+        "numero": "52",
+        "fila": 57,
+        "id_producto": 96,
+        "codigo": "HRM072",
+        "accion": "insertado"
+    },
+    {
+        "numero": "53",
+        "fila": 58,
+        "id_producto": 97,
+        "codigo": "HRM073",
+        "accion": "insertado"
+    },
+    {
+        "numero": "54",
+        "fila": 59,
+        "id_producto": 98,
+        "codigo": "HRM074",
+        "accion": "insertado"
+    },
+    {
+        "numero": "55",
+        "fila": 60,
+        "id_producto": 99,
+        "codigo": "HRM075",
+        "accion": "insertado"
+    },
+    {
+        "numero": "56",
+        "fila": 61,
+        "id_producto": 100,
+        "codigo": "HRM076",
+        "accion": "insertado"
+    },
+    {
+        "numero": "57",
+        "fila": 62,
+        "id_producto": 101,
+        "codigo": "HRM077",
+        "accion": "insertado"
+    },
+    {
+        "numero": "58",
+        "fila": 63,
+        "id_producto": 102,
+        "codigo": "HRM078",
+        "accion": "insertado"
+    },
+    {
+        "numero": "59",
+        "fila": 64,
+        "id_producto": 103,
+        "codigo": "HRM079",
+        "accion": "insertado"
+    },
+    {
+        "numero": "60",
+        "fila": 65,
+        "id_producto": 104,
+        "codigo": "HRM080",
+        "accion": "insertado"
+    },
+    {
+        "numero": "61",
+        "fila": 66,
+        "id_producto": 105,
+        "codigo": "HRM081",
+        "accion": "insertado"
+    },
+    {
+        "numero": "62",
+        "fila": 67,
+        "id_producto": 106,
+        "codigo": "HRM082",
+        "accion": "insertado"
+    },
+    {
+        "numero": "63",
+        "fila": 68,
+        "id_producto": 107,
+        "codigo": "HRM083",
+        "accion": "insertado"
+    },
+    {
+        "numero": "64",
+        "fila": 69,
+        "id_producto": 108,
+        "codigo": "HRM084",
+        "accion": "insertado"
+    },
+    {
+        "numero": "65",
+        "fila": 70,
+        "id_producto": 109,
+        "codigo": "HRM085",
+        "accion": "insertado"
+    },
+    {
+        "numero": "66",
+        "fila": 71,
+        "id_producto": 110,
+        "codigo": "HRM086",
+        "accion": "insertado"
+    },
+    {
+        "numero": "67",
+        "fila": 72,
+        "id_producto": 111,
+        "codigo": "HRM087",
+        "accion": "insertado"
+    },
+    {
+        "numero": "68",
+        "fila": 73,
+        "id_producto": 112,
+        "codigo": "HRM088",
+        "accion": "insertado"
+    },
+    {
+        "numero": "69",
+        "fila": 74,
+        "id_producto": 113,
+        "codigo": "HRM089",
+        "accion": "insertado"
+    },
+    {
+        "numero": "70",
+        "fila": 75,
+        "id_producto": 114,
+        "codigo": "HRM090",
+        "accion": "insertado"
+    },
+    {
+        "numero": "71",
+        "fila": 76,
+        "id_producto": 115,
+        "codigo": "HRM091",
+        "accion": "insertado"
+    },
+    {
+        "numero": "72",
+        "fila": 77,
+        "id_producto": 116,
+        "codigo": "HRM092",
+        "accion": "insertado"
+    },
+    {
+        "numero": "73",
+        "fila": 78,
+        "id_producto": 117,
+        "codigo": "HRM093",
+        "accion": "insertado"
+    },
+    {
+        "numero": "74",
+        "fila": 79,
+        "id_producto": 118,
+        "codigo": "HRM094",
+        "accion": "insertado"
+    },
+    {
+        "numero": "75",
+        "fila": 80,
+        "id_producto": 119,
+        "codigo": "HRM095",
+        "accion": "insertado"
+    },
+    {
+        "numero": "76",
+        "fila": 81,
+        "id_producto": 120,
+        "codigo": "HRM096",
+        "accion": "insertado"
+    },
+    {
+        "numero": "77",
+        "fila": 82,
+        "id_producto": 121,
+        "codigo": "HRM097",
+        "accion": "insertado"
+    },
+    {
+        "numero": "78",
+        "fila": 83,
+        "id_producto": 122,
+        "codigo": "HRM098",
+        "accion": "insertado"
+    },
+    {
+        "numero": "79",
+        "fila": 84,
+        "id_producto": 123,
+        "codigo": "HRM099",
+        "accion": "insertado"
+    },
+    {
+        "numero": "80",
+        "fila": 85,
+        "id_producto": 124,
+        "codigo": "HRM100",
+        "accion": "insertado"
+    },
+    {
+        "numero": "81",
+        "fila": 86,
+        "id_producto": 125,
+        "codigo": "HRM101",
+        "accion": "insertado"
+    },
+    {
+        "numero": "82",
+        "fila": 87,
+        "id_producto": 126,
+        "codigo": "HRM102",
+        "accion": "insertado"
+    },
+    {
+        "numero": "83",
+        "fila": 88,
+        "id_producto": 127,
+        "codigo": "HRM103",
+        "accion": "insertado"
+    },
+    {
+        "numero": "84",
+        "fila": 89,
+        "id_producto": 128,
+        "codigo": "HRM104",
+        "accion": "insertado"
+    },
+    {
+        "numero": "85",
+        "fila": 90,
+        "id_producto": 129,
+        "codigo": "HRM105",
+        "accion": "insertado"
+    },
+    {
+        "numero": "86",
+        "fila": 91,
+        "id_producto": 130,
+        "codigo": "HRM106",
+        "accion": "insertado"
+    },
+    {
+        "numero": "87",
+        "fila": 92,
+        "id_producto": 131,
+        "codigo": "HRM107",
+        "accion": "insertado"
+    },
+    {
+        "numero": "88",
+        "fila": 93,
+        "id_producto": 132,
+        "codigo": "HRM108",
+        "accion": "insertado"
+    },
+    {
+        "numero": "89",
+        "fila": 94,
+        "id_producto": 133,
+        "codigo": "HRM109",
+        "accion": "insertado"
+    },
+    {
+        "numero": "90",
+        "fila": 95,
+        "id_producto": 134,
+        "codigo": "HRM110",
+        "accion": "insertado"
+    },
+    {
+        "numero": "91",
+        "fila": 96,
+        "id_producto": 135,
+        "codigo": "HRM111",
+        "accion": "insertado"
+    },
+    {
+        "numero": "92",
+        "fila": 97,
+        "id_producto": 136,
+        "codigo": "HRM112",
+        "accion": "insertado"
+    },
+    {
+        "numero": "93",
+        "fila": 98,
+        "id_producto": 137,
+        "codigo": "HRM113",
+        "accion": "insertado"
+    },
+    {
+        "numero": "94",
+        "fila": 99,
+        "id_producto": 138,
+        "codigo": "HRM114",
+        "accion": "insertado"
+    },
+    {
+        "numero": "95",
+        "fila": 100,
+        "id_producto": 139,
+        "codigo": "HRM115",
+        "accion": "insertado"
+    },
+    {
+        "numero": "96",
+        "fila": 101,
+        "id_producto": 140,
+        "codigo": "HRM116",
+        "accion": "insertado"
+    },
+    {
+        "numero": "97",
+        "fila": 102,
+        "id_producto": 141,
+        "codigo": "HRM117",
+        "accion": "insertado"
+    },
+    {
+        "numero": "98",
+        "fila": 103,
+        "id_producto": 142,
+        "codigo": "HRM118",
+        "accion": "insertado"
+    },
+    {
+        "numero": "99",
+        "fila": 104,
+        "id_producto": 143,
+        "codigo": "HRM119",
+        "accion": "insertado"
+    },
+    {
+        "numero": "100",
+        "fila": 105,
+        "id_producto": 144,
+        "codigo": "HRM120",
+        "accion": "insertado"
+    },
+    {
+        "numero": "101",
+        "fila": 106,
+        "id_producto": 145,
+        "codigo": "HRM121",
+        "accion": "insertado"
+    },
+    {
+        "numero": "102",
+        "fila": 107,
+        "id_producto": 146,
+        "codigo": "HRM122",
+        "accion": "insertado"
+    },
+    {
+        "numero": "103",
+        "fila": 108,
+        "id_producto": 147,
+        "codigo": "HRM123",
+        "accion": "insertado"
+    },
+    {
+        "numero": "104",
+        "fila": 109,
+        "id_producto": 148,
+        "codigo": "HRM124",
+        "accion": "insertado"
+    },
+    {
+        "numero": "105",
+        "fila": 110,
+        "id_producto": 149,
+        "codigo": "HRM125",
+        "accion": "insertado"
+    },
+    {
+        "numero": "106",
+        "fila": 111,
+        "id_producto": 150,
+        "codigo": "HRM126",
+        "accion": "insertado"
+    },
+    {
+        "numero": "107",
+        "fila": 112,
+        "id_producto": 151,
+        "codigo": "HRM127",
+        "accion": "insertado"
+    },
+    {
+        "numero": "108",
+        "fila": 113,
+        "id_producto": 152,
+        "codigo": "HRM128",
+        "accion": "insertado"
+    },
+    {
+        "numero": "109",
+        "fila": 114,
+        "id_producto": 153,
+        "codigo": "HRM129",
+        "accion": "insertado"
+    },
+    {
+        "numero": "110",
+        "fila": 115,
+        "id_producto": 154,
+        "codigo": "HRM130",
+        "accion": "insertado"
+    },
+    {
+        "numero": "111",
+        "fila": 116,
+        "id_producto": 155,
+        "codigo": "HRM131",
+        "accion": "insertado"
+    }
+]

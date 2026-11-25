@@ -2,8 +2,11 @@ const modalAuditoria = document.getElementById("modal-auditoria");
 const detalleAuditoria = document.getElementById("detalle-auditoria");
 const tituloAuditoria = document.getElementById("titulo-modal-auditoria");
 
-document.querySelectorAll("[data-ver-cambios]").forEach((boton) => {
-    boton.addEventListener("click", () => {
+document.addEventListener('click', (evento) => {
+    const boton = evento.target.closest('[data-ver-cambios]');
+    if (!boton) return;
+    (() => {
+
         const plantilla = boton.parentElement.querySelector(
             ".contenido-cambios"
         );
@@ -16,7 +19,7 @@ document.querySelectorAll("[data-ver-cambios]").forEach((boton) => {
         );
 
         modalAuditoria.showModal();
-    });
+    })();
 });
 
 modalAuditoria.addEventListener("close", () => {

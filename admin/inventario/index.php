@@ -381,6 +381,7 @@ function camposInventario(array $filtros, int $producto, ?string $tokenResultado
     </main>
 </div>
 </div>
+<div data-dialogos-paginacion>
 <?php foreach ($listado['productos'] as $producto): $id = (int) $producto['id_producto']; ?>
     <?php require __DIR__ . '/modal/modal_atributos.php'; ?>
 <?php endforeach; ?>
@@ -414,6 +415,7 @@ function camposInventario(array $filtros, int $producto, ?string $tokenResultado
         </dialog>
     <?php endif; ?>
 <?php endif; ?>
+</div>
 <script src="/sistemaInventario/admin/inventario/formulario.js"></script>
 </body>
 </html>

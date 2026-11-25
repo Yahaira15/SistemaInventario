@@ -80,11 +80,9 @@ try {
     try {
         $db->beginTransaction();
         $q=$db->prepare('SELECT id_categoria,estado,prefijo_codigo FROM categorias WHERE nombre=? FOR UPDATE');
-        $q->execute(['HERRAMIENTAS METROLÓGICAS']); $cat=$q->fetch();
+        $q->execute(['HERRAMIENTAS']); $cat=$q->fetch();
         if (!$cat) {
-            $db->prepare('INSERT INTO categorias(nombre,descripcion,estado,prefijo_codigo) VALUES (?, ?, "ACTIVO", ?)')->execute(['HERRAMIENTAS METROLÓGICAS','Instrumentos del plan metrológico GM-FT02-01','ADP-MET']);
-            $cat=['id_categoria'=>(int)$db->lastInsertId(),'estado'=>'ACTIVO','prefijo_codigo'=>'ADP-MET'];
-            registrarCambioAuditoria($db,$admin,'categorias',$cat['id_categoria'],null);
+            throw new RuntimeException('No existe la categoría HERRAMIENTAS.');
         }
         if ($cat['estado']!=='ACTIVO' || !$cat['prefijo_codigo']) throw new RuntimeException('Categoría inactiva o sin prefijo.');
         $q=$db->prepare('SELECT id_area FROM areas WHERE nombre=? AND estado="ACTIVO"');
@@ -94,6 +92,8 @@ try {
             $area=(int)$db->lastInsertId(); registrarCambioAuditoria($db,$admin,'areas',$area,null);
         }
         $relaciones=[]; $nombres=[];
+        $q=$db->prepare('SELECT COALESCE(MAX(orden_visual),0) FROM categoria_atributos WHERE id_categoria=?');
+        $q->execute([$cat['id_categoria']]); $ultimoOrden=(int)$q->fetchColumn();
         foreach ($plan['equipos'] as $e) foreach ($e['campos'] as $nombre=>$valor) $nombres[$nombre]=true;
         foreach (array_keys($nombres) as $orden=>$nombre) {
             $q=$db->prepare('SELECT * FROM atributos WHERE nombre=?'); $q->execute([$nombre]); $a=$q->fetch();
@@ -106,7 +106,7 @@ try {
             $q=$db->prepare('SELECT id_categoria_atributo,estado FROM categoria_atributos WHERE id_categoria=? AND id_atributo=?');
             $q->execute([$cat['id_categoria'],$a['id_atributo']]); $r=$q->fetch();
             if (!$r) {
-                $db->prepare('INSERT INTO categoria_atributos(id_categoria,id_atributo,requerido,orden_visual,estado) VALUES (?,?,0,?,"ACTIVO")')->execute([$cat['id_categoria'],$a['id_atributo'],$orden]);
+                $db->prepare('INSERT INTO categoria_atributos(id_categoria,id_atributo,requerido,orden_visual,estado) VALUES (?,?,0,?,"ACTIVO")')->execute([$cat['id_categoria'],$a['id_atributo'],++$ultimoOrden]);
                 $r=['id_categoria_atributo'=>(int)$db->lastInsertId(),'estado'=>'ACTIVO'];
                 registrarCambioAuditoria($db,$admin,'categoria_atributos',$r['id_categoria_atributo'],null);
             }

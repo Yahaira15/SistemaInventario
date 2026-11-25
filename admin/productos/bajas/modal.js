@@ -71,7 +71,10 @@
     document.querySelectorAll('[data-modal-baja]').forEach((enlace) => {
         enlace.setAttribute('aria-haspopup', 'dialog');
         enlace.setAttribute('aria-controls', modal.id);
-        enlace.addEventListener('click', (evento) => {
+    });
+    document.addEventListener('click', (evento) => {
+            const enlace = evento.target.closest('[data-modal-baja]');
+            if (!enlace) return;
             if (evento.ctrlKey || evento.metaKey || evento.shiftKey || evento.altKey || evento.button !== 0) return;
             evento.preventDefault();
             if (ocupado) return;
@@ -80,7 +83,6 @@
             document.getElementById('titulo-modal-baja').textContent = enlace.textContent.trim() === 'Ver baja' ? 'Detalle de la baja' : 'Dar de baja equipo';
             modal.showModal();
             ejecutar(enlace.href);
-        });
     });
     contenido.addEventListener('click', (evento) => {
         if (evento.target.closest('[data-cerrar-baja]')) { evento.preventDefault(); if (!ocupado) modal.close(); }
