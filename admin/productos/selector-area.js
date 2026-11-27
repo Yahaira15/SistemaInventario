@@ -1,6 +1,8 @@
 (() => {
     const select = document.getElementById('area');
-    if (!select) return;
+    if (!select || select.dataset.buscadorAreaInicializado === 'true') return;
+    select.dataset.buscadorAreaInicializado = 'true';
+    const soloBusqueda = select.hasAttribute('data-area-busqueda');
 
     const opciones = Array.from(select.options)
         .filter((opcion) => opcion.value && !opcion.disabled)
@@ -12,7 +14,7 @@
     const campo = document.createElement('input');
     campo.type = 'text';
     campo.id = 'buscar-area-producto';
-    campo.placeholder = 'Busca o selecciona un área';
+    campo.placeholder = soloBusqueda ? 'Buscar área' : 'Busca o selecciona un área';
     campo.autocomplete = 'off';
     campo.required = select.required;
     campo.setAttribute('role', 'combobox');
@@ -32,7 +34,8 @@
     const estado = document.createElement('p');
     estado.className = 'estado-area-producto';
     estado.setAttribute('role', 'status');
-    control.append(campo, boton);
+    control.append(campo);
+    if (!soloBusqueda) control.append(boton);
     contenedor.append(control, lista, estado);
     select.after(contenedor);
     select.labels[0]?.setAttribute('for', campo.id);
@@ -91,6 +94,7 @@
         mostrar();
     });
     campo.addEventListener('click', () => mostrar(Boolean(select.value)));
+    if (soloBusqueda) campo.addEventListener('focus', () => mostrar(Boolean(select.value)));
     boton.addEventListener('click', () => {
         campo.focus();
         if (lista.hidden) mostrar(true);

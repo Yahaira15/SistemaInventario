@@ -267,6 +267,8 @@ if ($rolFiltro !== '') {
     <link rel="stylesheet" href="/sistemaInventario/admin/styles.css">
     <link rel="stylesheet" href="/sistemaInventario/admin/css/crud.css">
     <link rel="stylesheet" href="/sistemaInventario/admin/usuarios/imagen.css">
+    <link rel="stylesheet" href="/sistemaInventario/admin/usuarios/area.css">
+
 </head>
 <body>
     <div class="estructura-admin">
@@ -351,7 +353,7 @@ if ($rolFiltro !== '') {
                                     <div class="campo-formulario">
                                         <label for="area">Área</label>
 
-                                        <select name="id_area" id="area" required>
+                                        <select name="id_area" id="area" data-area-busqueda required>
                                             <option value="" disabled
                                                 <?= empty($datosFormulario['id_area']) ? 'selected' : '' ?>
                                             >
@@ -433,6 +435,7 @@ if ($rolFiltro !== '') {
                                     <label for="imagen">Imagen del usuario <span>(opcional)</span></label>
                                     <input type="file" id="imagen" name="imagen" accept="image/jpeg,image/png,image/webp" aria-describedby="ayuda-imagen estado-imagen">
                                     <small id="ayuda-imagen">JPG, PNG o WebP · Máximo 2 MB y 4096 × 4096 píxeles. <?= $estaEditando ? 'Si no seleccionas otra imagen, se conserva la actual.' : '' ?></small>
+                                    <small id="estado-imagen" role="status" aria-live="polite"></small>
                                     <button type="button" class="imagen-cancelar" id="cancelar-imagen" hidden>Cancelar selección</button>
                                 </div>
                             </div>
@@ -660,6 +663,7 @@ if ($rolFiltro !== '') {
     </div>
     <script src="/sistemaInventario/admin/usuarios/vista-foto.js"></script>
     <script src="/sistemaInventario/admin/usuarios/formulario.js"></script>
+    <script src="/sistemaInventario/admin/productos/selector-area.js"></script>
     <script src="/sistemaInventario/admin/js/confirmaciones.js"></script>
 </body>
 </html>

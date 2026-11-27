@@ -1,0 +1,12 @@
+.selector-area-producto { position: relative; min-width: 0; }
+.control-area-producto { display: flex; gap: 4px; }
+.control-area-producto input { flex: 1; min-width: 0; width: 100%; }
+.control-area-producto button { flex-shrink: 0; padding: 8px 12px; border: 1px solid var(--borde); border-radius: 8px; background: var(--blanco); color: var(--rojo-oscuro); cursor: pointer; }
+.control-area-producto button:focus-visible { outline: 2px solid var(--rojo); outline-offset: 2px; }
+.selector-area-producto ul { position: absolute; z-index: 20; top: 100%; left: 0; right: 0; max-height: 260px; overflow-y: auto; margin: 2px 0 0; padding: 4px 0; list-style: none; border: 1px solid var(--borde); border-radius: 0 0 8px 8px; background: var(--blanco); box-shadow: 0 6px 16px #0002; }
+.selector-area-producto [hidden] { display: none; }
+.selector-area-producto li { padding: 11px 14px; cursor: pointer; overflow-wrap: anywhere; }
+.selector-area-producto li:hover, .selector-area-producto li.activa { background: #fff0f0; }
+.estado-area-producto { margin: 4px 0 0; color: var(--texto-suave); font-size: 12px; }
+.estado-area-producto:empty { display: none; }
+.tarjeta:has(.selector-area-producto) { overflow: visible; }

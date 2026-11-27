@@ -78,6 +78,7 @@ if (!$solicitud) {
     <title>Nueva contraseña | Sistema de Inventario</title>
     <link rel="stylesheet" href="/sistemaInventario/styles.css">
     <link rel="stylesheet" href="/sistemaInventario/auth/recuperacion/styles.css">
+    <script src="/sistemaInventario/js/alertas.js" defer></script>
 </head>
 <body class="login-body">
     <main class="login-shell">

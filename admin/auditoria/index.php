@@ -193,14 +193,6 @@ require_once __DIR__ . '/presentacion.php';
                                     <br>
                                     <?php endif; ?>
                                     <?= escaparAuditoria(nombreRegistroAuditoria($evento)) ?>
-                                    <br>
-                                    <small>
-                                        <?= escaparAuditoria(
-                                            $evento['entidad'] === 'producto_asignaciones'
-                                                ? 'Asignación'
-                                                : (['productos' => 'Producto', 'usuarios' => 'Usuario', 'areas' => 'Área', 'categorias' => 'Categoría', 'atributos' => 'Atributo', 'atributo_opciones' => 'Opción', 'categoria_atributos' => 'Configuración'][$evento['entidad']] ?? $evento['entidad'])
-                                        ) ?> #<?= escaparAuditoria($evento['id_registro']) ?>
-                                    </small>
                                 </td>
                                 <td>
                                     <button

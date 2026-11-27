@@ -50,3 +50,4 @@ if ($idEncabezado > 0) {
 <script src="/sistemaInventario/admin/js/usuario-encabezado.js" defer></script>
 
 <script src="/sistemaInventario/admin/js/paginacion.js" defer></script>
+<script src="/sistemaInventario/js/alertas.js" defer></script>

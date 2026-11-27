@@ -70,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consulta por cédula | Sistema de Inventario</title>
     <link rel="stylesheet" href="/sistemaInventario/consulta/styles.css">
+    <script src="/sistemaInventario/js/alertas.js" defer></script>
 </head>
 <body>
     <main>

@@ -47,9 +47,6 @@ $seccionActiva = 'dashboard';
                 <?php require __DIR__ . '/../usuario_encabezado.php'; ?>
             </section>
             <main class="contenido-dashboard">
-                <h2>Bienvenido <?= htmlspecialchars($nombre, ENT_QUOTES, 'UTF-8') ?></h2>
-                <p class="dashboard-intro">Una vista general del inventario para empezar tu jornada.</p>
-
                 <?php require __DIR__ . '/panel_alertas.php'; ?>
 
                 <?php if ($resumen === null): ?>

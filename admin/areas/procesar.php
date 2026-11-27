@@ -17,7 +17,9 @@ const RUTA_AREAS = '/sistemaInventario/administracion/areas';
 
 function volverAAreas(): never
 {
-    header('Location: ' . urlRetornoFormulario('areas', RUTA_AREAS, []));
+    $contexto = ($_POST['accion'] ?? '') === 'crear' && !empty($_SESSION['mensajeExito'])
+        ? ['crear' => 1] : [];
+    header('Location: ' . urlRetornoFormulario('areas', RUTA_AREAS, $contexto));
     exit;
 }
 

@@ -31,6 +31,7 @@ unset($_SESSION['cedula_login']);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Iniciar sesión | Sistema de Inventario</title>
     <link rel="stylesheet" href="/sistemaInventario/styles.css">
+    <script src="/sistemaInventario/js/alertas.js" defer></script>
 </head>
 <body class="login-body">
     <main class="login-shell">

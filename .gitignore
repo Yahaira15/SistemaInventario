@@ -1,3 +1,4 @@
 /vendor/
 /config/correo.php
 /config/conexion.php
+/.local-backups/
